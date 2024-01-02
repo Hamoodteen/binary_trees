@@ -8,7 +8,11 @@
 */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	(void)parent;
-	(void)value;
-	return (NULL);
+	binary_tree_t assign;
+	binary_tree_t *node = &assign;
+	node->n = value;
+	node->parent = parent;
+	node->left = NULL;
+	node->right = NULL;
+	return (node);
 }
