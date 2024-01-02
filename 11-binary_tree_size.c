@@ -12,10 +12,16 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 	if (tree->left != NULL)
+	{
 		sizel = 1 + binary_tree_size(tree->left);
+		if (tree->parent != NULL)
+			sizep = 1 + binary_tree_size(tree->parent);
+	}
 	if (tree->right != NULL)
+	{
 		sizer = 1 + binary_tree_size(tree->right);
-	if (tree->parent != NULL)
-		sizep = 1 + binary_tree_size(tree->parent);
+		if (tree->parent != NULL)
+			sizep = 1 + binary_tree_depth(tree->parent);
+	}
 	return (sizep + sizel + sizer);
 }
