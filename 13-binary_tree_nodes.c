@@ -7,6 +7,13 @@
 */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	(void)tree;
-	return (0);
+	size_t calcl = 0, calcr = 0;
+
+	if (tree == NULL)
+		return (0);
+	else if ((tree->left != NULL) && (tree->right != NULL))
+		return (1);
+	calcl = binary_tree_nodes(tree->left);
+	calcr = binary_tree_nodes(tree->right);
+	return (calcl + calcr);
 }
