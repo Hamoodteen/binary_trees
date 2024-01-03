@@ -7,6 +7,7 @@
 */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-	(void)tree;
+	if (tree == NULL)
+		return (0);
 	return (0);
 }
